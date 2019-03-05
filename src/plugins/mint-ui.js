@@ -3,16 +3,32 @@ import {
     Tabbar, 
     TabItem,
     Header,
-    Button 
+    Button,
+    Swipe,
+    SwipeItem,
+    InfiniteScroll,
+    Spinner  
 } from 'mint-ui'
 
 const components = [
     Tabbar, 
     TabItem,
     Header,
-    Button
+    Button,
+    Swipe,
+    SwipeItem,
+    InfiniteScroll,
+    Spinner 
 ]
 
+
+
 components.forEach(component => {
-    Vue.component(component.name, component)
+    
+    if (component.install) {
+        Vue.use(component);
+    } else {
+        Vue.component(component.name, component)
+    }
+    
 })

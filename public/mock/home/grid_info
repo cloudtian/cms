@@ -1,0 +1,39 @@
+{
+    "data": [{
+        "id": 1,
+        "icon": "icon-xinyongqia",
+        "text": "新闻资讯",
+        "color": "#81AE5D",
+        "router": "news.list"
+    }, {
+        "id": 2,
+        "icon": "icon-qiapianxingshi",
+        "text": "图文分享",
+        "color": "#3A8EDD",
+        "router": ""
+    }, {
+        "id": 3,
+        "icon": "icon-gonglve",
+        "text": "商品展示",
+        "color": "#EADDBB",
+        "router": ""
+    }, {
+        "id": 4,
+        "icon": "icon-bangzhuzhongxin",
+        "text": "资讯",
+        "color": "#A65D75",
+        "router": ""
+    }, {
+        "id": 5,
+        "icon": "icon-fankui",
+        "text": "留言反馈",
+        "color": "#C3A06E",
+        "router": ""
+    }, {
+        "id": 6,
+        "icon": "icon-dianhua",
+        "text": "联系我们",
+        "color": "#CB4264",
+        "router": ""
+    }]
+}

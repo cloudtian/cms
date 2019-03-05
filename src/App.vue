@@ -1,17 +1,22 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <!-- 顶部导航 -->
-    <mt-header title="内容管理系统">
+    <mt-header fixed :title="bottomList[selected] ? bottomList[selected].text : '内容管理系统'">
       <router-link to="/" slot="left">
-        <mt-button icon="back">back</mt-button>
+        <mt-button icon="back">返回</mt-button>
       </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
+      <template slot="right">
+        <mt-button>登录&nbsp;</mt-button>
+        <mt-button>注册</mt-button>
+      </template>
     </mt-header>
 
-    <router-view/>
+    <div class="content">
+      <router-view/>
+    </div>
 
     <!-- 底部操作 -->
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" :fixed="true">
       <mt-tab-item v-for="(item, key) in bottomList" :key="key" :id="key">
         <i slot="icon" :class="item.class"></i>
         {{item.text}}
@@ -47,12 +52,14 @@ export default {
     }
   },
   watch: {
-    selected () {
-      this.$router.push({ name: this.selected })
+    selected (val) {
+      if (val) {
+        this.$router.push({ name: val })
+      }
     },
     $route (to) {
-      if (to.name !== this.selected) {
-        this.selected = to.name;
+      if (to.name !== this.selected) {  
+          this.selected = this.bottomList[to.name] ? to.name : '';
       }
     }
   }
@@ -61,4 +68,15 @@ export default {
 
 
 <style lang="less">
+.app {
+  height: 100%;
+  width: 100%;
+}
+.content {
+  margin-top: 40px;
+  margin-bottom: 55px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
 </style>

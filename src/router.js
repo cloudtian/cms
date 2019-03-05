@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
@@ -8,8 +7,12 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '/home',
       name: 'home',
-      component: Home
+      component: () => import(/* webpackChunkName: "home" */ './views/home/home.vue')
     },
     {
       path: '/vip',
@@ -17,17 +20,22 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (vip.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "vip" */ './views/Vip.vue')
+      component: () => import(/* webpackChunkName: "vip" */ './views/vip/vip.vue')
     },
     {
       path: '/car',
       name: 'car',
-      component: () => import(/* webpackChunkName: "car" */ './views/Car.vue')
+      component: () => import(/* webpackChunkName: "car" */ './views/car/car.vue')
     },
     {
       path: '/search',
       name: 'search',
-      component: () => import(/* webpackChunkName: "search" */ './views/Search.vue')
+      component: () => import(/* webpackChunkName: "search" */ './views/search/search.vue')
+    },
+    {
+      path: '/news/list',
+      name: 'news.list',
+      component: () => import(/* webpackChunkName: "News" */ './views/news/news-list.vue')
     },
   ]
 })
