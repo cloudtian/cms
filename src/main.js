@@ -7,6 +7,7 @@ import '@/plugins/axios'
 import './mock'
 import '@/assets/font/iconfont.css'
 import './main.css'
+import '@/components/index'
 
 Vue.config.productionTip = false
 

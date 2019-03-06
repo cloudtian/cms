@@ -1,5 +1,6 @@
 <template>
   <div class="news-page">
+    <nav-bar :title="navTitle"></nav-bar>
     <mt-spinner class="news-page_loading" 
                 v-if="loading && !list.length" 
                 color="#26a2ff"
@@ -38,7 +39,8 @@ export default {
         return {
             list: [],
             newsList: [],
-            loading: false
+            loading: false,
+            navTitle: '新闻列表'
         };
     },
     mounted () {
