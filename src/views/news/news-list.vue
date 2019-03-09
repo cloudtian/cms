@@ -5,11 +5,13 @@
                 v-if="loading && !list.length" 
                 color="#26a2ff"
                 type="fading-circle"></mt-spinner>
-    <ul v-else v-infinite-scroll="loadMore"
+    <div v-else v-infinite-scroll="loadMore"
         infinite-scroll-disabled="loading"
         infinite-scroll-distance="10" 
         class="news-page_content">
-        <li v-for="news in list" 
+        <router-link 
+            :to="{name: 'news.detail', query: {id: news.id}}"
+            v-for="news in list" 
             :key="news.id" 
             class="news-page_item-wrap">
             <div class="news-page_img">
@@ -25,8 +27,8 @@
                     </div>
                 </div>
             </div>
-        </li>
-    </ul>
+        </router-link>
+    </div>
   </div>
 </template>
 
@@ -62,7 +64,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .news-page {
     height: 100%;
     width: 100%;
@@ -75,15 +77,13 @@ export default {
     transform: translate(-50%, -50%);
 }
 .news-page_item-wrap {
-    height: 160px;
+    height: 150px;
     display: flex;
     align-items: center;
 }
-.news-page_img {
-    width: 100px;
-}
 .news-page_img img {
     border-radius: 5px;
+    margin-right: 10px;
 }
 .news-page_item {
     margin: 0 10px;
@@ -91,6 +91,9 @@ export default {
 }
 .news-page_item-summary {
     font-size: 12px;
+}
+.news-page_item-title {
+    color: #000;
 }
 .news-page_item-description {
     color: #666;

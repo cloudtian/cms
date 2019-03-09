@@ -22,6 +22,7 @@ export default {
     height: 40px;
     line-height: 40px;
     border-bottom: 1px solid #ddd;
+    position: relative;
 }
 .nav-bar_back {
     display: inline-block;

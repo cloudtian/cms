@@ -37,5 +37,10 @@ export default new Router({
       name: 'news.list',
       component: () => import(/* webpackChunkName: "News" */ './views/news/news-list.vue')
     },
+    {
+      path: '/news/detail',
+      name: 'news.detail',
+      component: () => import(/* webpackChunkName: "News"*/ './views/news/news-detail.vue')
+    }
   ]
 })

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import NavBar from './nav-bar.vue';
+import NavBar from './nav-bar/index.vue';
 
 let components = [
     NavBar
