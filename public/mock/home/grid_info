@@ -10,7 +10,7 @@
         "icon": "icon-qiapianxingshi",
         "text": "图文分享",
         "color": "#3A8EDD",
-        "router": ""
+        "router": "photo.list"
     }, {
         "id": 3,
         "icon": "icon-gonglve",

@@ -35,12 +35,17 @@ export default new Router({
     {
       path: '/news/list',
       name: 'news.list',
-      component: () => import(/* webpackChunkName: "News" */ './views/news/news-list.vue')
+      component: () => import(/* webpackChunkName: "news" */ './views/news/news-list.vue')
     },
     {
       path: '/news/detail',
       name: 'news.detail',
-      component: () => import(/* webpackChunkName: "News"*/ './views/news/news-detail.vue')
+      component: () => import(/* webpackChunkName: "news"*/ './views/news/news-detail.vue')
+    },
+    {
+      path: '/photo/list',
+      name: 'photo.list',
+      component: () => import(/* webpackChunkName: "photo*/ './views/photo/photo-list.vue')
     }
   ]
 })

@@ -7,7 +7,8 @@ import {
     Swipe,
     SwipeItem,
     InfiniteScroll,
-    Spinner  
+    Spinner,
+    Lazyload   
 } from 'mint-ui'
 
 const components = [
@@ -18,10 +19,9 @@ const components = [
     Swipe,
     SwipeItem,
     InfiniteScroll,
-    Spinner 
+    Spinner,
+    Lazyload  
 ]
-
-
 
 components.forEach(component => {
     
