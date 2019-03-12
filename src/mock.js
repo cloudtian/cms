@@ -35,20 +35,40 @@ Mock.mock('/api/news/news_detail', {
     }
 })
 
-Mock.mock('/api/photo/category', {
-    'category|3-10': [{
-        'id|+1': 1,
-        'text': () => Random.cword(4)
-    }]
-})
+// 改用静态数据
+// Mock.mock('/api/photo/category', {
+//     'category|3-10': [{
+//         'id|+1': 1,
+//         'text': () => Random.cword(4)
+//     }]
+// })
+
+function getUrlParams (url) {
+    let params = url.split('?')[1] || '';
+    let obj = {};
+    params.split('&').forEach(item => {
+        let keyValue = item.split('=');
+        obj[keyValue[0]] = keyValue[1];
+    });
+    return obj;
+} 
+
+let photo = {};
 
 // 传入category.id获取
-Mock.mock('/api/photo/list', () => {
-    return Mock.mock({
-        'list|5-20': [{
+Mock.mock(/\/api\/photo\/list/, 'get', (res) => {
+    let id = getUrlParams(res.url).id;
+    if (photo[id]) {
+        return photo[id];
+    }
+    let data = Mock.mock({
+        'list|0-10': [{
             'id|+1': 1,
             'img_url': () => Random.image('300x250'),
             'description': () => Random.cparagraph(1, 3)
         }]
-    })
+    });
+
+    photo[id] = data;
+    return data;
 })

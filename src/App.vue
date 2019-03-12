@@ -59,7 +59,7 @@ export default {
     },
     $route (to) {
       if (to.name !== this.selected) {  
-          this.selected = this.bottomList[to.name] ? to.name : '';
+          this.selected = this.bottomList[to.name] ? to.name : this.selected;
       }
     }
   }

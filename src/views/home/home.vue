@@ -11,7 +11,7 @@
         <ul class="home-page_grid-info">
           <li class="home-page_grid-info-item"
               v-for="grid in grids" :key="grid.id">
-              <router-link :to="{name: grid.router}">
+              <router-link :to="grid.router">
                 <i class="home-page_grid-info-icon iconfont" 
                   :class="grid.icon" 
                   :style="{color: grid.color}"></i>

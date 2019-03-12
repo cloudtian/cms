@@ -43,7 +43,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "news"*/ './views/news/news-detail.vue')
     },
     {
-      path: '/photo/list',
+      path: '/photo/list/:categoryId',
       name: 'photo.list',
       component: () => import(/* webpackChunkName: "photo*/ './views/photo/photo-list.vue')
     }

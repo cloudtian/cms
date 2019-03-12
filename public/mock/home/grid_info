@@ -4,13 +4,20 @@
         "icon": "icon-xinyongqia",
         "text": "新闻资讯",
         "color": "#81AE5D",
-        "router": "news.list"
+        "router": {
+            "name": "news.list"
+        }
     }, {
         "id": 2,
         "icon": "icon-qiapianxingshi",
         "text": "图文分享",
         "color": "#3A8EDD",
-        "router": "photo.list"
+        "router": {
+            "name": "photo.list",
+            "params": {
+                "categoryId": 0
+            }
+        }
     }, {
         "id": 3,
         "icon": "icon-gonglve",
