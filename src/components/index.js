@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import NavBar from './nav-bar/index.vue';
+import Comment from './comment/index.vue';
 
 let components = [
-    NavBar
+    NavBar,
+    Comment
 ]
 
 components.forEach(item => {

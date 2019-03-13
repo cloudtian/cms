@@ -8,7 +8,8 @@ import {
     SwipeItem,
     InfiniteScroll,
     Spinner,
-    Lazyload   
+    Lazyload,
+    Toast   
 } from 'mint-ui'
 
 const components = [
@@ -22,6 +23,8 @@ const components = [
     Spinner,
     Lazyload  
 ]
+
+Vue.prototype.$toast = Toast;
 
 components.forEach(component => {
     

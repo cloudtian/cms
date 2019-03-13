@@ -16,9 +16,9 @@
         <div class="photo-list">
             <ul>
                 <li v-for="photo in photos" :key="photo.id">
-                    <div>
+                    <router-link :to="{name: 'photo.detail', query: {id: photo.id}}">
                         <img v-lazy="photo.img_url">
-                    </div>
+                    </router-link>
                     <p>
                         {{photo.description}}
                     </p>
@@ -85,6 +85,14 @@ export default {
                 }
             }).then(res => {
                 this.photos = res.data.list;
+
+                if (!this.photos.length) {
+                    this.$toast({
+                        message: '没有图片！',
+                        iconClass: 'iconfont icon-guanbi2',
+                        duration: 1000
+                    });
+                }
             })
         },
 

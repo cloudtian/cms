@@ -4,6 +4,7 @@ import router from './router'
 
 import '@/plugins/mint-ui'
 import '@/plugins/axios'
+import '@/plugins/vue-preview'
 import './mock'
 import '@/assets/font/iconfont.css'
 import './main.css'

@@ -46,6 +46,11 @@ export default new Router({
       path: '/photo/list/:categoryId',
       name: 'photo.list',
       component: () => import(/* webpackChunkName: "photo*/ './views/photo/photo-list.vue')
+    },
+    {
+      path: '/photo/detail/',
+      name: 'photo.detail',
+      component: () => import(/* webpackChunkName: "photo*/ './views/photo/photo-detail.vue')
     }
   ]
 })
